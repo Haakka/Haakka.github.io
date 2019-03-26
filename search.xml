@@ -1,39 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>第一篇文章测试</title>
-      <link href="/2018/09/15/First/"/>
-      <url>/2018/09/15/First/</url>
-      
-        <content type="html"><![CDATA[<h1 id="写作介绍"><a href="#写作介绍" class="headerlink" title="写作介绍"></a>写作介绍</h1><h2 id="1，字体介绍"><a href="#1，字体介绍" class="headerlink" title="1，字体介绍"></a>1，字体介绍</h2><p><em>这是斜体</em> 或 <em>这也是斜体</em><br><strong>这是粗体</strong><br><strong><em>这是加粗斜体</em></strong><br><del>这是删除线</del></p><h2 id="2，分级标题"><a href="#2，分级标题" class="headerlink" title="2，分级标题"></a>2，分级标题</h2><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="3，超链接"><a href="#3，超链接" class="headerlink" title="3，超链接"></a>3，超链接</h2><p>写法：</p><p>行内形式：<a href="https://xfbxfbxfb.github.io/" target="_blank" rel="noopener">我的博客</a><br>参考形式：[我的博客][1]，有一个很好的平台-[简书][2]<br>[1]:<a href="https://Haakka.github.io/">https://Haakka.github.io/</a><br>自动链接：我的博客地址<a href="https://Haakka.github.io/">https://Haakka.github.io/</a></p><h2 id="4-列表"><a href="#4-列表" class="headerlink" title="4,列表"></a>4,列表</h2><p>无序列表：<br>写法：</p><ul><li>无序列表项1</li></ul><ul><li>无序列表项2</li></ul><ul><li>无序列表项3<br>s<br>有序列表：<br>写法：<br>1.有序列表项1<br>2.有序列表项2<br>3.有序列表项3</li></ul><h2 id="5，插入图片"><a href="#5，插入图片" class="headerlink" title="5，插入图片"></a>5，插入图片</h2><p>在 Hexo 中插入图片，需要将图片放在 source/img/ 文件夹下</p><h2 id="6，表格"><a href="#6，表格" class="headerlink" title="6，表格"></a>6，表格</h2><table><thead><tr><th>表头1</th><th style="text-align:left">表头2</th><th style="text-align:center">表头3</th><th style="text-align:right">表头4</th></tr></thead><tbody><tr><td>默认左对齐</td><td style="text-align:left">左对齐</td><td style="text-align:center">居中对其</td><td style="text-align:right">右对齐</td></tr><tr><td>默认左对齐</td><td style="text-align:left">左对齐</td><td style="text-align:center">居中对其</td><td style="text-align:right">右对齐</td></tr><tr><td>默认左对齐</td><td style="text-align:left">左对齐</td><td style="text-align:center">居中对其</td><td style="text-align:right">右对齐</td></tr></tbody></table><hr>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> test </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2018/09/09/hello-world/"/>
-      <url>/2018/09/09/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-  
-  
+<search>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F02%2F18%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[第一篇文章测试]]></title>
+    <url>%2F2018%2F02%2F17%2FFirst%2F</url>
+    <content type="text"><![CDATA[写作介绍1，字体介绍这是斜体 或 这也是斜体这是粗体这是加粗斜体这是删除线 2，分级标题一级标题二级标题三级标题四级标题五级标题六级标题3，超链接写法： 行内形式：我的博客参考形式：[我的博客][1]，有一个很好的平台-[简书][2][1]:https://Haakka.github.io/自动链接：我的博客地址https://Haakka.github.io/ 4,列表无序列表：写法： 无序列表项1 无序列表项2 无序列表项3s有序列表：写法：1.有序列表项12.有序列表项23.有序列表项3 5，插入图片在 Hexo 中插入图片，需要将图片放在 source/img/ 文件夹下 6，表格 表头1 表头2 表头3 表头4 默认左对齐 左对齐 居中对其 右对齐 默认左对齐 左对齐 居中对其 右对齐 默认左对齐 左对齐 居中对其 右对齐]]></content>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HashMap总结篇]]></title>
+    <url>%2F2017%2F12%2F25%2FHashMap%2F</url>
+    <content type="text"><![CDATA[名词解释：散列表（Hash table，又称哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。 Map(JDK文档)：An object that maps keys to values. A map cannot contain duplicate keys; each key can map to at most one value.（将键映射到值的对象。不能包含重复的键;每个键最多可以映射一个值。） HashMap概念HashMap 是一个散列表，它存储的内容是键值对(key-value)映射，继承于AbstractMap，实现了Map、Cloneable、java.io.Serializable接口。 1.Map 接口的实现提供所有可选的映射操作，并允许使用 null 值和 null 键。（除了不同步和允许使用 null 之外，HashMap 类与 Hashtable 大致相同。）此类不保证映射的顺序，特别是它不保证该顺序恒久不变。另外，HashMap是非线程安全的，也就是说在多线程的环境下，可能会存在问题，而Hashtable是线程安全的。 2.Map 接口的实现假定哈希函数将元素正确分布在各桶之间，可为基本操作（get 和 put）提供稳定的性能。迭代集合视图所需的时间与 HashMap 实例的“容量”（桶的数量）及其大小（键-值映射关系数）的和成比例。所以，如果迭代性能很重要，则不要将初始容量设置得太高（或将加载因子设置得太低）。 HashMap 的实例有两个参数影响其性能：初始容量和加载因子。 容量是哈希表中桶的数量，初始容量只是哈希表在创建时的容量。 加载因子是哈希表在其容量自动增加之前可以达到多满的一种尺度。 当哈希表中的条目数超出了加载因子与当前容量的乘积时，通过调用 rehash 方法将容量翻倍。通常，默认加载因子 (0.75) 在时间和空间成本上寻求一种折衷。加载因子过高虽然减少了空间开销，但同时也增加了查询成本（在大多数 HashMap 类的操作中，包括 get 和 put 操作，都反映了这一点）。所以在设置初始容量时应该考虑到映射中所需的条目数及其加载因子，以便最大限度地降低 rehash 操作次数。如果初始容量大于最大条目数乘以加载因子，则不会发生 rehash 操作。 HashMap结构JDK1.8之前，HashMap采用数组+链表实现，即使用链表处理冲突，同一hash值的节点都存储在一个链表里。但是当位于一个桶中的元素较多，即hash值相等的元素较多时，通过key值依次查找的效率较低。 JDK1.8之前 HashMap结构如上图JDK1.8中，HashMap采用数组+链表+红黑树实现，当链表长度超过阈值（8）时，将链表转换为红黑树。 JDK1.8 HashMap结构如上图 Q：JDK1.8中HashMap为什么要引入红黑树？A: 数组的优点是：物理地址连续 + 按下标随机访问效率高O(1)，缺点是插入，删除效率低；链表的优点是存储地址不连续，可灵活的扩展自己的长度，插入，删除效率高，但是访问效率低O(n)。所以当 HashMap 中有大量的元素都存放到同一个桶中时，这个桶下有一条长长的链表，这个时候 HashMap 就相当于一个单链表，假如单链表有 n 个元素，遍历的时间复杂度就是 O(n)，而红黑树的时间复杂度是O(logn)，大大的提高了查找速度。### Q：JDK1.8中HashMap为什么要引入红黑树？]]></content>
+      <tags>
+        <tag>HashMap</tag>
+      </tags>
+  </entry>
 </search>
