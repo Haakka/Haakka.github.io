@@ -658,7 +658,7 @@
   
   
 
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -736,7 +736,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  994
+                  1.2k
                 </span>
               
 
@@ -752,7 +752,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -774,30 +774,14 @@
 
       
         
-          
-            <h3 id="名词解释："><a href="#名词解释：" class="headerlink" title="名词解释："></a>名词解释：</h3><p>散列表（Hash table，又称哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。</p>
-<p>Map(JDK文档)：An object that maps keys to values. A map cannot contain duplicate keys; each key can map to at most one value.（将键映射到值的对象。不能包含重复的键;每个键最多可以映射一个值。）</p>
-<hr>
-<h2 id="HashMap概念"><a href="#HashMap概念" class="headerlink" title="HashMap概念"></a>HashMap概念</h2><p>HashMap 是一个散列表，它存储的内容是键值对(key-value)映射，继承于AbstractMap，实现了Map、Cloneable、java.io.Serializable接口。    </p>
-<p>1.Map 接口的实现提供所有可选的映射操作，并允许使用 null 值和 null 键。（除了不同步和允许使用 null 之外，HashMap 类与 Hashtable 大致相同。）此类不保证映射的顺序，特别是它不保证该顺序恒久不变。另外，HashMap是非线程安全的，也就是说在多线程的环境下，可能会存在问题，而Hashtable是线程安全的。</p>
-<p>2.Map 接口的实现假定哈希函数将元素正确分布在各桶之间，可为基本操作（get 和 put）提供稳定的性能。迭代集合视图所需的时间与 HashMap 实例的“容量”（桶的数量）及其大小（键-值映射关系数）的和成比例。所以，如果迭代性能很重要，则不要将初始容量设置得太高（或将加载因子设置得太低）。</p>
-<p>HashMap 的实例有两个参数影响其性能：<font size="5" color="#FF8C00">初始容量</font>和<font size="5" color="#FF8C00">加载因子</font>。</p>
-<ul>
-<li>容量是哈希表中桶的数量，初始容量只是哈希表在创建时的容量。</li>
-<li>加载因子是哈希表在其容量自动增加之前可以达到多满的一种尺度。</li>
-</ul>
-<p>当哈希表中的条目数超出了加载因子与当前容量的乘积时，通过调用 rehash 方法将容量翻倍。<br>通常，默认加载因子 (0.75) 在时间和空间成本上寻求一种折衷。加载因子过高虽然减少了空间开销，但同时也增加了查询成本（在大多数 HashMap 类的操作中，包括 get 和 put 操作，都反映了这一点）。所以在设置初始容量时应该考虑到映射中所需的条目数及其加载因子，以便最大限度地降低 rehash 操作次数。如果初始容量大于最大条目数乘以加载因子，则不会发生 rehash 操作。</p>
-<hr>
-<h2 id="HashMap结构"><a href="#HashMap结构" class="headerlink" title="HashMap结构"></a>HashMap结构</h2><p>JDK1.8之前，HashMap采用<font size="5" color="#ADFF2F">数组+链表</font>实现，即使用链表处理冲突，同一hash值的节点都存储在一个链表里。但是当位于一个桶中的元素较多，即hash值相等的元素较多时，通过key值依次查找的效率较低。</p>
-<p><center><img src="http://poyd6xzmp.bkt.clouddn.com/hashmap%281%29.png" alt="avatar"> </center></p>
-<p><center><img src="http://poyd6xzmp.bkt.clouddn.com/HashMap%282%29.png" alt="avatar"> </center>  </p>
-<h2 id="JDK1-8之前-HashMap结构如上图"><a href="#JDK1-8之前-HashMap结构如上图" class="headerlink" title="JDK1.8之前 HashMap结构如上图"></a><center>JDK1.8之前 HashMap结构如上图</center></h2><p>JDK1.8中，HashMap采用<font size="5" color="#ADFF2F">数组+链表+红黑树</font>实现，当链表长度超过阈值（8）时，将链表转换为红黑树。  </p>
-<p><center><img src="http://poyd6xzmp.bkt.clouddn.com/HashMap%283%29.png" alt="avatar"> </center></p>
-<p><center><img src="http://poyd6xzmp.bkt.clouddn.com/HashMap%284%29.png" alt="avatar"> </center></p>
-<p><center>JDK1.8 HashMap结构如上图</center><br><br></p>
-<h3 id="Q：JDK1-8中HashMap为什么要引入红黑树？"><a href="#Q：JDK1-8中HashMap为什么要引入红黑树？" class="headerlink" title="Q：JDK1.8中HashMap为什么要引入红黑树？"></a><font color="#FF8C00">Q：JDK1.8中HashMap为什么要引入红黑树？</font></h3><font size="5" color="#ADFF2F">A:</font>   数组的优点是：物理地址连续 + 按下标随机访问效率高O(1)，缺点是插入，删除效率低；链表的优点是存储地址不连续，可灵活的扩展自己的长度，插入，删除效率高，但是访问效率低O(n)。所以当 HashMap 中有大量的元素都存放到同一个桶中时，这个桶下有一条长长的链表，这个时候 HashMap 就相当于一个单链表，假如单链表有 n 个元素，遍历的时间复杂度就是 O(n)，而红黑树的时间复杂度是O(logn)，大大的提高了查找速度。<br><br><br>### <font color="#FF8C00">Q：JDK1.8中HashMap为什么要引入红黑树？</font>
-
-          
+          HashMap 是一个散列表，它存储的内容是键值对(key-value)映射，继承于AbstractMap，实现了Map、Cloneable、java.io.Serializable接口。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/25/HashMap/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -948,7 +932,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.3k</span>
+    <span title="Site words total count">1.5k</span>
    -->
   
 </div>
