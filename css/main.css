@@ -1883,7 +1883,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff66b6;
+  background: #ff5483;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2818,7 +2818,7 @@ header.post-header {
   width: 50%;
 }
 .content-wrap {
-  width: calc(100% - 200px);
+  width: calc(100% - 250px);
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .header {
