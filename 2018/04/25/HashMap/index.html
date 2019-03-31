@@ -94,7 +94,7 @@
 <meta property="og:image" content="http://poyd6xzmp.bkt.clouddn.com/20181221114016307.png">
 <meta property="og:image" content="http://poyd6xzmp.bkt.clouddn.com/HashMap%284%29.png">
 <meta property="og:image" content="http://poyd6xzmp.bkt.clouddn.com/1553613187%281%29.jpg">
-<meta property="og:updated_time" content="2019-03-27T13:03:38.633Z">
+<meta property="og:updated_time" content="2019-03-30T05:10:23.022Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HashMap小结篇">
 <meta name="twitter:description" content="HashMap 是一个散列表，它存储的内容是键值对(key-value)映射，继承于AbstractMap，实现了Map、Cloneable、java.io.Serializable接口。">
@@ -457,19 +457,19 @@
 <li>加载因子是哈希表在其容量自动增加之前可以达到多满的一种尺度。</li>
 </ul>
 <p>当哈希表中的条目数超出了加载因子与当前容量的乘积时，通过调用 rehash 方法将容量翻倍。<br>通常，默认加载因子 (0.75) 在时间和空间成本上寻求一种折衷。加载因子过高虽然减少了空间开销，但同时也增加了查询成本（在大多数 HashMap 类的操作中，包括 get 和 put 操作，都反映了这一点）。所以在设置初始容量时应该考虑到映射中所需的条目数及其加载因子，以便最大限度地降低 rehash 操作次数。如果初始容量大于最大条目数乘以加载因子，则不会发生 rehash 操作。</p>
-<h3 id="Q：为什么需要使用加载因子，为什么需要扩容呢？加载因子为什么设置为0-75？"><a href="#Q：为什么需要使用加载因子，为什么需要扩容呢？加载因子为什么设置为0-75？" class="headerlink" title="Q：为什么需要使用加载因子，为什么需要扩容呢？加载因子为什么设置为0.75？"></a>Q：为什么需要使用加载因子，为什么需要扩容呢？加载因子为什么设置为0.75？</h3><p><font size="5" color="#ADFF2F">A:</font>   加载因子是表示Hsah表中元素的填满的程度，使用加载因子是因为如果一直不进行扩容的话，链表就会越来越长，这样查找的效率很低。加载因子越大,填满的元素越多,空间利用率越高，但冲突的机会加大了；反之,加载因子越小,填满的元素越少,冲突的机会减小,但空间浪费多了。冲突的机会越大,则查找的成本越高。在理想情况下,使用随机哈希码,节点出现的频率在hash桶中遵循<a href="http://en.wikipedia.org/wiki/Poisson_distribution" target="_blank" rel="noopener">泊松分布</a>，当桶中元素到达8个的时候，概率已经变得非常小，也就是说用0.75作为加载因子，每个碰撞位置的链表长度超过8个是几乎不可能的。  </p>
+<h3 id="Q：为什么需要使用加载因子，为什么需要扩容呢？加载因子为什么设置为0-75？"><a href="#Q：为什么需要使用加载因子，为什么需要扩容呢？加载因子为什么设置为0-75？" class="headerlink" title="Q：为什么需要使用加载因子，为什么需要扩容呢？加载因子为什么设置为0.75？"></a>Q：为什么需要使用加载因子，为什么需要扩容呢？加载因子为什么设置为0.75？</h3><p><font size="5" color="#FF530D">A:</font>   加载因子是表示Hsah表中元素的填满的程度，使用加载因子是因为如果一直不进行扩容的话，链表就会越来越长，这样查找的效率很低。加载因子越大,填满的元素越多,空间利用率越高，但冲突的机会加大了；反之,加载因子越小,填满的元素越少,冲突的机会减小,但空间浪费多了。冲突的机会越大,则查找的成本越高。在理想情况下,使用随机哈希码,节点出现的频率在hash桶中遵循<a href="http://en.wikipedia.org/wiki/Poisson_distribution" target="_blank" rel="noopener">泊松分布</a>，当桶中元素到达8个的时候，概率已经变得非常小，也就是说用0.75作为加载因子，每个碰撞位置的链表长度超过8个是几乎不可能的。  </p>
 <hr>
-<h2 id="HashMap结构"><a href="#HashMap结构" class="headerlink" title="HashMap结构"></a>HashMap结构</h2><p>JDK1.8之前，HashMap采用<font size="5" color="#ADFF2F">数组+链表</font>实现，即使用链表处理冲突，同一hash值的节点都存储在一个链表里。但是当位于一个桶中的元素较多，即hash值相等的元素较多时，通过key值依次查找的效率较低。</p>
+<h2 id="HashMap结构"><a href="#HashMap结构" class="headerlink" title="HashMap结构"></a>HashMap结构</h2><p>JDK1.8之前，HashMap采用<font size="5" color="#FF530D"> 数组 + 链表 </font>实现，即使用链表处理冲突，同一hash值的节点都存储在一个链表里。但是当位于一个桶中的元素较多，即hash值相等的元素较多时，通过key值依次查找的效率较低。</p>
 <p><center><img src="http://poyd6xzmp.bkt.clouddn.com/hashmap%281%29.png" alt="avatar"> </center></p>
 <p><center><img src="http://poyd6xzmp.bkt.clouddn.com/20181102182525703.png" alt="avatar"></center></p>
 <p><center><img src="http://poyd6xzmp.bkt.clouddn.com/20180330211416496.jpg" alt="avatar"> </center>  </p>
-<p><center>JDK1.8之前 HashMap结构如上图</center><br><br><br>JDK1.8中，HashMap采用<font size="5" color="#ADFF2F">数组+链表+红黑树</font>实现，当链表长度超过阈值（8）时，将链表转换为红黑树。  </p>
+<p><center>JDK1.8之前 HashMap结构如上图</center><br><br><br>JDK1.8中，HashMap采用<font size="5" color="#FF530D">数组+链表+红黑树</font>实现，当链表长度超过阈值（8）时，将链表转换为红黑树。  </p>
 <p><center><img src="http://poyd6xzmp.bkt.clouddn.com/HashMap%283%29.png" alt="avatar"> </center></p>
 <p><center><img src="http://poyd6xzmp.bkt.clouddn.com/20181221114016307.png" alt="avatar"></center></p>
 <p><center><img src="http://poyd6xzmp.bkt.clouddn.com/HashMap%284%29.png" alt="avatar"> </center></p>
 <p><center>JDK1.8 HashMap结构如上图</center><br><br></p>
-<h3 id="Q：JDK1-8中HashMap为什么要引入红黑树？"><a href="#Q：JDK1-8中HashMap为什么要引入红黑树？" class="headerlink" title="Q：JDK1.8中HashMap为什么要引入红黑树？"></a>Q：JDK1.8中HashMap为什么要引入红黑树？</h3><p><font size="5" color="#ADFF2F">A:</font>   数组的优点是：物理地址连续 + 按下标随机访问效率高O(1)，缺点是插入，删除效率低；链表的优点是存储地址不连续，可灵活的扩展自己的长度，插入，删除效率高，但是访问效率低O(n)。所以当 HashMap 中有大量的元素都存放到同一个桶中时（Hash冲突），这个桶下有一条长长的链表，这个时候 HashMap 就相当于一个单链表，假如单链表有 n 个元素，遍历的时间复杂度就是 O(n)，而红黑树的时间复杂是O(logn)，大大的提高了查找速度。  </p>
-<h3 id="Q：JDK1-8中HashMap为什么当链表长度大于8时才转换成红黑树呢？"><a href="#Q：JDK1-8中HashMap为什么当链表长度大于8时才转换成红黑树呢？" class="headerlink" title="Q：JDK1.8中HashMap为什么当链表长度大于8时才转换成红黑树呢？"></a>Q：JDK1.8中HashMap为什么当链表长度大于8时才转换成红黑树呢？</h3><p><font size="5" color="#ADFF2F">A:</font>   因为红黑树的时间复杂是O(logn），长度为8的时候，平均查找长度为3。如果继续使用链表，平均查找长度为8/2=4。这才有转换为树的必要。。链表长度如果是6以内，6/2=3，速度也很快的。转化为树还有生成树的时间，并不明智。长度为8，链表转树，长度为6，树转链表，中间有个差值，可以防止链表和树频繁转换。假设8以上转为树，8以下转为链表，那么Hashmap如果不停的插入删除，链表长度在8左右徘徊，就会不停的树转链表，链表转树，就会效率很低。</p>
+<h3 id="Q：JDK1-8中HashMap为什么要引入红黑树？"><a href="#Q：JDK1-8中HashMap为什么要引入红黑树？" class="headerlink" title="Q：JDK1.8中HashMap为什么要引入红黑树？"></a>Q：JDK1.8中HashMap为什么要引入红黑树？</h3><p><font size="5" color="#FF530D">A:</font>   数组的优点是：物理地址连续 + 按下标随机访问效率高O(1)，缺点是插入，删除效率低；链表的优点是存储地址不连续，可灵活的扩展自己的长度，插入，删除效率高，但是访问效率低O(n)。所以当 HashMap 中有大量的元素都存放到同一个桶中时（Hash冲突），这个桶下有一条长长的链表，这个时候 HashMap 就相当于一个单链表，假如单链表有 n 个元素，遍历的时间复杂度就是 O(n)，而红黑树的时间复杂是O(logn)，大大的提高了查找速度。  </p>
+<h3 id="Q：JDK1-8中HashMap为什么当链表长度大于8时才转换成红黑树呢？"><a href="#Q：JDK1-8中HashMap为什么当链表长度大于8时才转换成红黑树呢？" class="headerlink" title="Q：JDK1.8中HashMap为什么当链表长度大于8时才转换成红黑树呢？"></a>Q：JDK1.8中HashMap为什么当链表长度大于8时才转换成红黑树呢？</h3><p><font size="5" color="#FF530D">A:</font>   因为红黑树的时间复杂是O(logn），长度为8的时候，平均查找长度为3。如果继续使用链表，平均查找长度为8/2=4。这才有转换为树的必要。。链表长度如果是6以内，6/2=3，速度也很快的。转化为树还有生成树的时间，并不明智。长度为8，链表转树，长度为6，树转链表，中间有个差值，可以防止链表和树频繁转换。假设8以上转为树，8以下转为链表，那么Hashmap如果不停的插入删除，链表长度在8左右徘徊，就会不停的树转链表，链表转树，就会效率很低。</p>
 <hr>
 <h2 id="JDK1-8-HashMap源码分析"><a href="#JDK1-8-HashMap源码分析" class="headerlink" title="JDK1.8 HashMap源码分析"></a>JDK1.8 HashMap源码分析</h2><p>HashMap的数据存储流程：</p>
 <ol>
